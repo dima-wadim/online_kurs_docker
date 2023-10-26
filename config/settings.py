@@ -15,8 +15,10 @@ from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+dot_env = os.path.join(BASE_DIR, '.env')
+load_dotenv(dotenv_path=dot_env)
 
-load_dotenv(BASE_DIR / '.env')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -43,6 +45,8 @@ INSTALLED_APPS = [
     'users',
     'courses',
 
+    'django_filters',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +147,9 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 LOGIN_URL = '/users/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
