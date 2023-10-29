@@ -29,7 +29,7 @@ class Lesson(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название урока')
     description = models.TextField(verbose_name='Описание', **NULLABLE)
     image = models.ImageField(upload_to='lesson/', verbose_name='Изображение', **NULLABLE)
-    url = models.URLField(max_length=250, verbose_name='ссылка', **NULLABLE)
+    url = models.URLField(max_length=250, verbose_name='Ссылка', **NULLABLE)
 
     course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name='Урок', **NULLABLE, related_name='lesson')
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, verbose_name='Пользователь',
