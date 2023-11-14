@@ -45,3 +45,8 @@ https://stripe.com/docs/api/payment_intents/retrieve — получение пл
 Для тестирования можно использовать номера карт из документации:
 
 https://stripe.com/docs/terminal/references/testing#standard-test-cards
+
+Настрока проекта для работы с Celery. Также настройкае celery-beat 
+для выполнения последующих задач.
+
+Добавление асинхронной рассылкиу писем пользователям об обновлении материалов курса.
