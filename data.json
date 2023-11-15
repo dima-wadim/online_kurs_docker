@@ -1,0 +1,55 @@
+[
+  {
+    "model": "courses.course",
+    "pk": 2,
+    "fields": {
+      "title": "Java111-разработчик",
+      "description": null,
+      "picture": "",
+      "owner": null
+    }
+  },
+  {
+    "model": "courses.course",
+    "pk": 3,
+    "fields": {
+      "title": "Python-разработчки",
+      "description": null,
+      "picture": "",
+      "owner": null
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 1,
+    "fields": {
+      "title": "Python 2.0",
+      "description": null,
+      "image": "",
+      "url": null,
+      "course": 3
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 2,
+    "fields": {
+      "title": "Django",
+      "description": null,
+      "image": "",
+      "url": null,
+      "course": 3
+    }
+  },
+  {
+    "model": "courses.lesson",
+    "pk": 3,
+    "fields": {
+      "title": "Синтаксис",
+      "description": null,
+      "image": "",
+      "url": null,
+      "course": 2
+    }
+  }
+]
