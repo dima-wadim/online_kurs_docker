@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+from datetime import timedelta
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -120,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "ru"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Moscow"
 
 USE_I18N = True
 
@@ -178,12 +179,12 @@ CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
 # Настройки для Celery
-#CELERY_BEAT_SCHEDULE = {
-#    'task-name': {
-#        'task': 'myapp.tasks.my_task',  # Путь к задаче
-#        'schedule': timedelta(minutes=90),  # Расписание выполнения задачи (например, каждые 10 минут)
-#    },
-#}
+CELERY_BEAT_SCHEDULE = {
+    'task-name': {
+        'task': 'myapp.tasks.my_task',  # Путь к задаче
+        'schedule': timedelta(minutes=90),  # Расписание выполнения задачи (например, каждые 90 минут)
+    },
+}
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 2525
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
